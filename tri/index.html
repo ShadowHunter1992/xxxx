@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+		<div class='slider'>
+			<div class="img-box">
+				
+				<img onclick="ChangeBg()" src="1.jpg">
+			</div>
+			<button onclick="Left()">Left</button>
+			<button onclick="Right()">Right</button>
+
+
+		</div>
+
+</body>
+
+<script>
+	images=['1.jpg','2.jpg','3.jpg','4.jpg'];
+
+	count=0;
+	function Right(){
+		if(count==images.length-1){
+			count=-1;
+		}
+		count++;
+		document.getElementsByTagName('img')[0].setAttribute('src',images[count]);
+	}
+
+	function Left(){
+		if(count==0)
+		{
+			count=images.length;
+		}
+
+		count--;
+		document.getElementsByTagName('img')[0].setAttribute('src',images[count]);
+	}
+
+	function ChangeBg(){
+
+		src=document.getElementsByTagName('img')[0].getAttribute('src');
+		body=document.getElementsByTagName('body')[0]
+		body.style.backgroundImage="url("+src+")";
+		
+
+	}
+
+
+
+</script>
+</html>
